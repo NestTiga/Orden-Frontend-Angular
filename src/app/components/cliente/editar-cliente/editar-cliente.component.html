@@ -1,0 +1,14 @@
+<form [formGroup]="myForm" (ngSubmit)="editarCliente()" novalidate>
+    <div class="form-row row">
+      <div class="form-group col-12 col-md-12 pe-2 contentenedor-control">
+        <label>Nombre</label>
+        <input type="text" class="form-control" placeholder="Ingrese un nombre" formControlName="nombre" value="{{ data.data.nombre }}"/>
+        <label>Apellido</label>
+        <input type="text" class="form-control" placeholder="Ingrese un apellido" formControlName="apellido" value="{{ data.data.apellido }}"/>
+      </div>
+      
+      <button type="submit" class="btn btn-dark btnDefaultPrimary btn-stilo" [disabled]="myForm.invalid">
+        Agregar
+      </button>
+    </div>
+  </form>

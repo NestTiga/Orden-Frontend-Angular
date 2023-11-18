@@ -1,0 +1,59 @@
+<!-- CRUD de Clientes -->
+<div class="cliente-contenedor">
+    <!-- contenedor de encabezado de la tabla  -->
+    <div class="btnAgregar d-flex justify-content-between mb-4">
+      <div class="contenedor-botones d-flex justify-content-end px-2 py-2">
+        <button-modal
+          [tipoModal]="'nuevoArticulo'"
+          [contenido]="'Nuevo artículo'"
+          [conIcono]="true"
+          [icono]="'add'"
+          [color]="'#1c1917'"
+          [titleModal]="'Nuevo artículo'"
+        >
+        </button-modal>
+      </div>
+    </div>
+    <!-- tabla mostrar clientes-->
+    <div class="contenedor-tabla table-responsive">
+      <div class="col-lg-12">
+        <div class="tabla-cuerpo">
+          <table class="table table-striped tabla-estilos">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center">#</th>
+                <th scope="col">
+                  <div class="d-flex" style="cursor: pointer; gap: 4px">
+                    <span>Nombre</span>
+                  </div>
+                </th>
+                <th scope="col">
+                    <div class="d-flex" style="cursor: pointer; gap: 4px">
+                      <span>Precio</span>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="d-flex" style="cursor: pointer; gap: 4px">
+                      <span>Código</span>
+                    </div>
+                </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let articulo of articulos; let i = index; let indice = index"
+              >
+                <td>{{ indice + 1 }}</td>
+                <td>{{ articulo.nombre }}</td>
+                <td>{{ articulo.precio}}</td>
+                <td>{{ articulo.codigo }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

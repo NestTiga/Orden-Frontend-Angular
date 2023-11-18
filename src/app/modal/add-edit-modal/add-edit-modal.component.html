@@ -1,0 +1,42 @@
+<div class="modal fade" id="modalGeneral">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAgregarPLazo">{{ titleModal }}</h5>
+        <button
+          #closeModal
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          id="modalClose"
+          (click)="cerrarModal()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <container-element [ngSwitch]="tipoFormulario">
+          <!-- the same view can be shown in more than one case -->
+          <div *ngSwitchCase="'nuevoCliente'">
+            <app-crear-cliente></app-crear-cliente>
+          </div>
+          <div *ngSwitchCase="'nuevoArticulo'">
+            <app-crear-articulo></app-crear-articulo>
+          </div>
+          <div *ngSwitchCase="'editarCliente'">
+            <app-editar-cliente></app-editar-cliente>
+          </div>
+        </container-element>
+      </div>
+      <div class="modal-footer">
+        <button
+          type=""
+          class="btn btn-danger btnDefaultPrimary"
+          data-bs-dismiss="modal"
+          (click)="cerrarModal()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
