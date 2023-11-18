@@ -16,6 +16,13 @@ const routes: Routes = [
         (m) => m.ArticulosModule
       ),
   },
+  {
+    path: 'ordenes',
+    loadChildren: () =>
+      import('../components/ordenes/ordenes.module').then(
+        (m) => m.OrdenesModule
+      ),
+  },
 ];
 
 @NgModule({

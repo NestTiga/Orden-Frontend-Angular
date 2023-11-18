@@ -1,5 +1,5 @@
 export interface ClientesModel {
-    cliente_id: number;
+    clienteId: number;
     nombre:     string;
     apellido:   string;
     ordens:     any[];

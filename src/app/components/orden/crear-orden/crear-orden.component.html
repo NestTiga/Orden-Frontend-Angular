@@ -1,1 +1,57 @@
-<p>crear-orden works!</p>
+<form [formGroup]="myForm" (ngSubmit)="addOrden()" novalidate>
+    <div class="form-row row" >
+      <div class="form-group col-12 col-md-12 pe-2 contentenedor-control">
+        <!-- contenedor de botón a la derecha -->
+        <div class="contenedor-botones d-flex justify-content-end px-2 py-2">
+          <!-- debe ir aqui el boton -->
+        </div>
+        <h5><b>Datos de orden</b></h5>
+        <hr>
+        <ng-container formGroupName="orden_general">
+            <div class="form-group col-12 col-md-12 pe-2 contentenedor-control">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <label class="col-form-label">Cliente:<span id="Requerido">&nbsp;*</span></label>
+                        <select name="clienteId" id="clienteId" class="form-select" formControlName="clienteId">
+                        <option value="" selected disabled >Seleccionar cliente</option>
+                        <option *ngFor="let cliente of clientes" value={{cliente.clienteId}}>{{cliente.nombre}}</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="fecha" class="col-form-label">Fecha de orden:<span id="Requerido">&nbsp;*</span></label>
+                        <input type="date" class="form-control" formControlName="fecha">
+                    </div>                
+                </div>   
+            </div>
+        </ng-container>
+
+        <!-- Otro form: array -->
+        <div style="height: 15px;"></div>
+        <hr>
+        <button class="btn btn-outline-success " (click)="addNuevoArticulo()" type="button">Agregar artículo</button> 
+        <hr>
+        <ng-container formArrayName="orden_detalle" *ngFor="let o of orden_detalle.controls; let i = index">
+            <b>Artículo {{i+1}} &nbsp; &nbsp; <span style="color: red; cursor:pointer;" (click)="EliminarNuevoArticulo(i)">X</span> </b>
+                <div class="form-group col-12 col-md-12 pe-2 contentenedor-control" [formGroupName]="i">
+                    <div class="form-group col-12 col-md-12 pe-2 contentenedor-control">
+                        <div class="form-group row"  >
+                            <div class="col-sm-3 mb-1 mb-sm-0">
+                                <label for="articId" class="col-form-label">Artículos:<span id="Requerido">&nbsp;*</span></label>
+                                <select name="articId" id="articId" class="form-select" formControlName="articId">
+                                    <option value="" selected disabled>Seleccionar artículo</option>
+                                    <option *ngFor="let articulo of articulos" value={{articulo.articId}} >{{articulo.nombre}}</option>
+                                </select>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+        </ng-container>
+        
+      </div>
+
+      <button type="submit" class="btn btn-dark btnDefaultPrimary btn-stilo" [disabled]="myForm.invalid">
+        Agregar
+      </button>
+    </div>
+ 
+  </form>

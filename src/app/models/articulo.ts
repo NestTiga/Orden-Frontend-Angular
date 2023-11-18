@@ -1,5 +1,5 @@
 export interface ArticuloModel {
-    artic_id: number;
+    articId: number;
     codigo:   string;
     nombre:   string;
     precio:   number;

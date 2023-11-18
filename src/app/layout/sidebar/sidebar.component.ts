@@ -24,6 +24,11 @@ export class SidebarComponent implements OnInit {
         name: 'Artículos',
         icon: 'shop',
       },
+      {
+        path: '/ordenes',
+        name: 'Orden',
+        icon: 'add_shopping_cart',
+      },
       
     ];
 

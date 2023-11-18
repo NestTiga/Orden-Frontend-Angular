@@ -8,7 +8,7 @@ const initClientes: DataForm = {
   title:'',
   formulario: '',
   data: {
-    cliente_id: 0,
+    clienteId: 0,
     nombre:     '',
     apellido:   '',
     ordens:     [],

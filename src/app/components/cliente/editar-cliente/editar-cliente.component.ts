@@ -26,7 +26,7 @@ export class EditarClienteComponent implements OnInit {
       this.data = cliente;
       console.log('Los datos en editar =>', this.data);
       this.myForm = this.fb.group({
-        cliente_id:[this.data.data.cliente_id, Validators.required],
+        clienteId:[this.data.data.clienteId, Validators.required],
         nombre: [this.data.data.nombre, Validators.required],
         apellido: [this.data.data.apellido, Validators.required],
       });

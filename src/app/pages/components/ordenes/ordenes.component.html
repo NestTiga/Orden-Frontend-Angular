@@ -1,0 +1,49 @@
+<div class="clientes-container">
+    <div class="btnAgregar d-flex justify-content-between mb-4">
+      <div class="titulo">
+        <h5>Gestión de ordenes <span> Tigasi Néstor </span></h5>
+        <h6>Generar ordenes de cliente</h6>
+      </div>
+      <!-- Componete botones -->
+    </div>
+  
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button
+          class="nav-link active"
+          id="nav-orden-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-orden"
+          type="button"
+          role="tab"
+          aria-controls="nav-orden"
+          aria-selected="true"
+          (click)="clickMenuTipo('ORDEN')"
+        >
+          Orden
+        </button>
+        
+      </div>
+    </nav>
+    <div class="card-body">
+      <div class="contenedor-componentes">
+        <!-- Componente pricipal -->
+        <div class="col-lg-12">
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-orden"
+              role="tabpanel"
+              aria-labelledby="nav-orden-tab"
+            >
+              <app-crear-orden></app-crear-orden>
+            </div>
+            
+            <div>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
